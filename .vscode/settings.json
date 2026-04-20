@@ -1,0 +1,91 @@
+{
+    // Editor settings
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false,
+    "editor.rulers": [120],
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.trimAutoWhitespace": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.eol": "\n",
+
+    // C/C++ specific settings
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4
+    },
+    "[h]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4
+    },
+
+    // C/C++ extension settings
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+    "C_Cpp.default.compilerPath": "/usr/bin/gcc",
+    "C_Cpp.errorSquiggles": "enabled",
+
+    // PlatformIO settings
+    "platformio-ide.useBuiltinPIOCore": true,
+    "platformio-ide.useDevelopmentPIOCore": false,
+    "platformio-ide.autoRebuildAutocompleteIndex": true,
+    "platformio-ide.forceUploadAndMonitor": false,
+
+    // Terminal settings
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.scrollback": 10000,
+
+    // Files to exclude from explorer
+    "files.exclude": {
+        "**/.pio": true,
+        "**/.vscode/.browse.c_cpp.db*": true,
+        "**/sdkconfig.old": true
+    },
+
+    // Files associations
+    "files.associations": {
+        "*.ino": "cpp",
+        "*.tpp": "cpp",
+        "sdkconfig": "properties",
+        "sdkconfig.defaults": "properties"
+    },
+
+    // Search exclusions
+    "search.exclude": {
+        "**/.pio": true,
+        "**/node_modules": true
+    },
+
+    // Git settings
+    "git.ignoreLimitWarning": true,
+
+    // Markdown settings
+    "markdown.preview.breaks": true,
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false
+    },
+
+    // JSON settings
+    "[json]": {
+        "editor.tabSize": 2
+    },
+    "[jsonc]": {
+        "editor.tabSize": 2
+    },
+
+    // YAML settings
+    "[yaml]": {
+        "editor.tabSize": 2
+    },
+
+    // Python settings (for build scripts)
+    "[python]": {
+        "editor.tabSize": 4
+    }
+}

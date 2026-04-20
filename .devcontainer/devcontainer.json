@@ -1,0 +1,40 @@
+{
+	"name": "ESP32-S3 PlatformIO Dev Container",
+	"image": "python:3.11-bullseye",
+	
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"installOhMyZsh": false,
+			"upgradePackages": true,
+			"username": "vscode",
+			"userUid": "automatic",
+			"userGid": "automatic"
+		}
+	},
+
+	"postCreateCommand": "bash .devcontainer/setup.sh",
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"platformio.platformio-ide",
+				"ms-vscode.cpptools",
+				"ms-vscode.cpptools-extension-pack"
+			],
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash"
+			}
+		}
+	},
+
+	"runArgs": [
+		"--privileged"
+	],
+
+	"mounts": [
+		"source=/dev,target=/dev,type=bind,consistency=cached"
+	],
+
+	"remoteUser": "vscode"
+}

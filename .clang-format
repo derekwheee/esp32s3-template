@@ -1,0 +1,57 @@
+# Clang-format configuration for ESP-IDF projects
+# Based on ESP-IDF coding style guidelines
+
+---
+BasedOnStyle: Google
+IndentWidth: 4
+ColumnLimit: 120
+UseTab: Never
+
+# Indentation
+IndentCaseLabels: true
+IndentPPDirectives: AfterHash
+ConstructorInitializerIndentWidth: 4
+ContinuationIndentWidth: 4
+
+# Alignment
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AlignEscapedNewlines: Left
+AlignOperands: true
+AlignTrailingComments: true
+
+# Spacing
+SpaceAfterCStyleCast: false
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyParentheses: false
+SpacesInContainerLiterals: false
+SpacesInCStyleCastParentheses: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+
+# Breaking
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakAfterReturnType: None
+AlwaysBreakBeforeMultilineStrings: false
+BreakBeforeBraces: Linux
+BreakBeforeTernaryOperators: true
+BreakStringLiterals: true
+
+# Pointers and references
+PointerAlignment: Right
+DerivePointerAlignment: false
+
+# Include sorting
+SortIncludes: true
+IncludeBlocks: Preserve
+
+# Other
+KeepEmptyLinesAtTheStartOfBlocks: false
+MaxEmptyLinesToKeep: 1
+ReflowComments: true
