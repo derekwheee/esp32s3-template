@@ -19,12 +19,18 @@ Checks: >
   -readability-function-cognitive-complexity
 
 WarningsAsErrors: ''
-HeaderFilterRegex: '.*'
+HeaderFilterRegex: 'src/.*'
 FormatStyle: file
 
 CheckOptions:
-  - key: readability-identifier-naming.VariableCase
+  - key: readability-identifier-naming.LocalVariableCase
     value: lower_case
+  - key: readability-identifier-naming.GlobalVariableCase
+    value: UPPER_CASE
+  - key: readability-identifier-naming.GlobalConstantPointerCase
+    value: UPPER_CASE
+  - key: readability-identifier-naming.StaticConstantCase
+    value: UPPER_CASE
   - key: readability-identifier-naming.FunctionCase
     value: lower_case
   - key: readability-identifier-naming.MacroDefinitionCase

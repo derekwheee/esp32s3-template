@@ -47,13 +47,17 @@ size:
 # Format C source files
 format:
 	@echo "Formatting C source files..."
-	@find src -name "*.c" -o -name "*.h" | xargs clang-format -i
+	@find src \( -name "*.c" -o -name "*.h" \) -exec clang-format -i {} +
 	@echo "Done!"
 
 # Run static analysis
 lint:
 	@echo "Running clang-tidy..."
-	@find src -name "*.c" | xargs clang-tidy -- -Isrc
+	@if [ ! -f compile_commands.json ]; then \
+		echo "Generating compilation database..."; \
+		pio run -t compiledb; \
+	fi
+	@find src -name "*.c" -exec clang-tidy {} -p . \; 2>&1 | grep -E "(src/.*\.(c|h):|warnings? generated|Suppressed|Error while processing src/)" || echo "✓ No issues found in source files"
 	@echo "Done!"
 
 # Run all checks

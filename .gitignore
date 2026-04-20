@@ -2,8 +2,10 @@
 sdkconfig
 sdkconfig.old
 sdkconfig.*.old
+sdkconfig.esp32*
 dependencies.lock
 managed_components/
+compile_commands.json
 
 # PlatformIO
 .pio/

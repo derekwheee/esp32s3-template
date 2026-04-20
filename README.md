@@ -1,6 +1,7 @@
 # ESP32-S3 DevKitC-1 PlatformIO Template
 
-A VS Code dev container template for ESP32-S3 development using PlatformIO with ESP-IDF framework.
+A VS Code dev container template for ESP32-S3 development using PlatformIO
+with ESP-IDF framework.
 
 ## Features
 
@@ -9,8 +10,8 @@ A VS Code dev container template for ESP32-S3 development using PlatformIO with 
 - 🚀 **ESP-IDF**: Official Espressif IoT Development Framework
 - 🐛 **USB Debugging**: Built-in USB-JTAG debugging support
 - 📡 **Serial Monitor**: Integrated serial communication with ESP logging
-- 🎨 **Code Formatting**: Clang-format with ESP-IDF style
-- ✅ **Pre-commit Hooks**: Automated code quality checks
+- 🎨 **Code Formatting**: Clang-format with ESP-IDF style (auto-installed)
+- ✅ **Pre-commit Hooks**: Automated code quality checks (auto-configured)
 - 🔄 **CI/CD**: GitHub Actions for automated builds
 - ⚡ **Quick Start**: Includes working blink example with FreeRTOS
 
@@ -23,7 +24,8 @@ A VS Code dev container template for ESP32-S3 development using PlatformIO with 
 
 ### Prerequisites
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop) (or Docker Engine on Linux)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop)
+  (or Docker Engine on Linux)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Dev Containers Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
@@ -32,6 +34,7 @@ A VS Code dev container template for ESP32-S3 development using PlatformIO with 
 1. **Clone or copy this template** to your project directory
 
 2. **Open in VS Code**:
+
    ```bash
    code .
    ```
@@ -42,11 +45,6 @@ A VS Code dev container template for ESP32-S3 development using PlatformIO with 
    - Wait for the container to build (first time takes ~5-10 minutes)
 
 4. **Connect your ESP32-S3 board** via USB
-
-5. **Set up pre-commit hooks** (optional but recommended):
-   ```bash
-   pre-commit install
-   ```
 
 ### Build and Upload
 
@@ -74,9 +72,10 @@ pio run --target upload && pio device monitor
 
 ### Expected Behavior
 
-The built-in LED on GPIO48 should blink on and off every second. The serial monitor should show:
+The built-in LED on GPIO48 should blink on and off every second. The serial
+monitor should show:
 
-```
+```text
 I (XXX) blink: ESP32-S3 Blink Example Starting...
 I (XXX) blink: LED GPIO: 48
 I (XXX) blink: Setup complete! Starting blink loop...
@@ -89,7 +88,7 @@ I (XXX) blink: LED OFF
 
 ## Project Structure
 
-```
+```text
 .
 ├── .devcontainer/
 │   ├── devcontainer.json    # Dev container configuration
@@ -112,7 +111,8 @@ I (XXX) blink: LED OFF
 
 ## Code Style
 
-This project uses [EditorConfig](https://editorconfig.org/) to maintain consistent coding styles. The `.editorconfig` file enforces:
+This project uses [EditorConfig](https://editorconfig.org/) to maintain
+consistent coding styles. The `.editorconfig` file enforces:
 
 - **C files**: 4-space indentation, 120 character line limit
 - **UTF-8 encoding** and **LF line endings** for all files
@@ -120,13 +120,19 @@ This project uses [EditorConfig](https://editorconfig.org/) to maintain consiste
 
 ### VS Code Settings
 
-The included `.vscode/settings.json` configures the development environment:
+The included `.vscode/settings.json` configures the development
+environment:
 
 - **Format on save**: Automatically formats C files when saving
+  (enabled by default)
 - **Clang-format integration**: Uses `.clang-format` configuration
+  (pre-installed)
 - **PlatformIO optimization**: Auto-rebuild IntelliSense index
 - **File exclusions**: Hides build artifacts from explorer
 - **Consistent indentation**: 4 spaces for C, 2 for JSON/YAML
+
+All formatting and linting tools are pre-installed in the dev container, so
+everything works out of the box!
 
 ### Code Formatting & Quality
 
@@ -136,6 +142,7 @@ The included `.vscode/settings.json` configures the development environment:
 - **GitHub Actions**: CI/CD for automated builds and testing
 
 See **[DEVELOPMENT.md](DEVELOPMENT.md)** for complete documentation on:
+
 - Setting up and using pre-commit hooks
 - Code formatting with clang-format
 - Static analysis with clang-tidy
@@ -162,6 +169,7 @@ If your ESP32-S3 board uses a different GPIO for the LED, edit `src/main.c`:
 ```
 
 Common LED pins on ESP32-S3 boards:
+
 - **GPIO48**: ESP32-S3-DevKitC-1 (addressable RGB LED)
 - **GPIO2**: Some custom boards
 - **GPIO21**: Adafruit QT Py ESP32-S3
@@ -169,6 +177,7 @@ Common LED pins on ESP32-S3 boards:
 ### Using ESP-IDF Features
 
 This template uses ESP-IDF, giving you access to:
+
 - **FreeRTOS**: Real-time operating system with tasks, queues, semaphores
 - **ESP Logging**: Multi-level logging (ESP_LOGI, ESP_LOGW, ESP_LOGE)
 - **GPIO Driver**: Advanced GPIO control with interrupts
@@ -194,6 +203,7 @@ To add ESP-IDF components, use the standard ESP-IDF API. Example:
 3. The dev container is configured with `--privileged` mode for USB access
 
 **macOS specific**: You may need to install drivers for USB-Serial chips:
+
 - [CP210x Driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
 - [CH340 Driver](https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver)
 
@@ -206,6 +216,7 @@ To add ESP-IDF components, use the standard ESP-IDF API. Example:
 ### Serial Monitor Shows Garbage
 
 Check that monitor speed matches in both `platformio.ini` and your code:
+
 ```ini
 monitor_speed = 115200
 ```
@@ -223,11 +234,12 @@ monitor_speed = 115200
 For ESP-IDF components, they're built-in. For third-party libraries, add to `platformio.ini`:
 
 ```ini
-lib_deps = 
+lib_deps =
     https://github.com/espressif/esp-idf-lib.git
 ```
 
-You can also create custom components in a `components/` directory following ESP-IDF structure.
+You can also create custom components in a `components/` directory following
+ESP-IDF structure.
 
 ### Debugging
 
